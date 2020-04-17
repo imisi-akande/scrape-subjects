@@ -1,0 +1,8 @@
+# virtualenv
+subject_env/
+
+# Finder stuff
+.DS_Store
+
+# cache
+/__pycache__/
