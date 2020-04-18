@@ -5,4 +5,5 @@ subject_env/
 .DS_Store
 
 # cache
-/__pycache__/
+subjects_crawler/subjects_crawler/spiders/__pycache__/
+subjects_crawler/subjects_crawler/__pycache__/
