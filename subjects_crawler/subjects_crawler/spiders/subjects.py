@@ -13,6 +13,7 @@ class SubjectsSpider(Spider):
         self.subject = subject
 
     def parse(self, response):
+        # scrape by category using subject or scrape all subjects
         if self.subject:
             subject_url = response.xpath('//a[contains(@title, "'+ self.subject +'")]/@href').extract_first()
             absolute_subject_url = response.urljoin(subject_url)
@@ -26,6 +27,7 @@ class SubjectsSpider(Spider):
 
 
     def parse_subject(self, response):
+        # scrape all courses with subsequent pages
         subject_title = response.xpath('//h1/text()').extract_first()
         subject_description = response.xpath('//p[@class="text-1"]/text()').extract_first()
         subject_followers = response.xpath('//button[@data-name="FOLLOW"]/span/text()').extract_first()
